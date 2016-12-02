@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pvh-xQ-CWA">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="DgT-8h-vOP">
+            <objects>
+                <navigationController id="pvh-xQ-CWA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yCC-GP-WQo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ego-dM-O8Y" kind="relationship" relationship="rootViewController" id="Fgm-2c-FSu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFE-Lt-QF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-615" y="5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VXn-ao-sWJ">
+            <objects>
+                <viewController id="ego-dM-O8Y" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V4n-rS-xK5"/>
+                        <viewControllerLayoutGuide type="bottom" id="F2a-eP-xHt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jy6-YL-ZWC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nH3-Df-wLW">
+                                <state key="normal" title="点击进入崩溃页面"/>
+                                <connections>
+                                    <segue destination="dzH-TK-odk" kind="show" id="98k-hf-pHP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nH3-Df-wLW" firstAttribute="centerY" secondItem="Jy6-YL-ZWC" secondAttribute="centerY" id="ks0-iT-bUf"/>
+                            <constraint firstItem="nH3-Df-wLW" firstAttribute="centerX" secondItem="Jy6-YL-ZWC" secondAttribute="centerX" id="xnt-3X-ePM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cpB-AV-7Vg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jp7-z7-5UX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="5"/>
+        </scene>
+        <!--崩溃页面-->
+        <scene sceneID="poL-0G-Qca">
+            <objects>
+                <tableViewController id="dzH-TK-odk" customClass="CrashTableViewController" customModule="TestJSPatchSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ChO-lv-Q7l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="mLc-eO-otL">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mLc-eO-otL" id="wCx-7O-pxW">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dzH-TK-odk" id="CYB-cr-1db"/>
+                            <outlet property="delegate" destination="dzH-TK-odk" id="353-iG-WRX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="崩溃页面" id="bds-sw-rTL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4H-Uk-ypU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926" y="5"/>
+        </scene>
+    </scenes>
+</document>
